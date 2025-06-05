@@ -3,7 +3,7 @@
         ,ORDERID
         ,PAYMENTMETHOD
         ,STATUS
-        ,AMOUNT
+        ,AMOUNT/100.0 as amount
         ,CREATED
     from default.stripe_payments
 
