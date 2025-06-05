@@ -25,6 +25,12 @@ customer_orders as (
 
 ),
 
+ltv as (
+    select customer_id, sum(amount) lifetime_value
+    from fct_orders
+    group by 1
+),
+
 final as (
 
     select
@@ -34,12 +40,14 @@ final as (
         customer_orders.first_order_date,
         customer_orders.most_recent_order_date,
         coalesce (customer_orders.number_of_orders, 0) 
-        as number_of_orders
+        as number_of_orders,
+        coalesce (ltv.lifetime_value, 0) 
+        as lifetime_value
 
     from customers
 
     left join customer_orders using (customer_id)
-
+    left join ltv on customers.customer_id = ltv.customer_id
 )
 
 select * from final
