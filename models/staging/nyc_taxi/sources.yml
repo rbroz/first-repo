@@ -1,7 +1,8 @@
 version: 2
 
 sources:
-  - name: jaffle_shop
+  - name: yellow_tripdata
+    description: A clone of a Postgres application database.
     quoting:
           database: false
           schema: false
@@ -9,5 +10,6 @@ sources:
     database: workspace
     schema: default
     tables:
-      - name: jaffle_shop_customers
-      - name: jaffle_shop_orders
+      - name: yellow_tripdata_2024_01
+      - name: taxi_zone_lookup
+
