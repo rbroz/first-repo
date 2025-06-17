@@ -1,9 +1,3 @@
-/*
-next lets build a fact_taxi_ride model 
-+id, create a surrogate key based on columns, and lets check if we lose any rows based on that 
-*/
-
-
 with 
 
 final as (
