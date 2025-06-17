@@ -6,3 +6,10 @@ models:
       - name: trip_key
         tests:
           - unique
+  - name: stg_yellow_taxi_trips.sql
+    columns:
+      - name: VendorID
+        tests:
+          - accepted_values:
+              values: ['1','2','6','7']
+
